@@ -8,5 +8,29 @@ namespace xregister.Presentation
 {
     class RegisterGUI
     {
+        public RegisterGUI()
+        {
+
+        }
+
+        protected void create()
+        {
+
+        }
+
+        protected void read()
+        {
+
+        }
+
+        protected void update()
+        {
+
+        }
+
+        protected void delete()
+        {
+
+        }
     }
 }
