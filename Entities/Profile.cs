@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entities
 {
-    class Profile
+    public class Profile
     {
         private string name;
         private string lastname;
@@ -14,8 +14,14 @@ namespace Entities
         private string url;
         private bool state;
         private string observations;
+        private float rank;
 
-        public Profile(string name, string lastname, DateTime birth, string url, bool state, string observations)
+        public Profile()
+        {
+
+        }
+
+        public Profile(string name, string lastname, DateTime birth, string url, bool state, string observations, float rank)
         {
             this.name = name;
             this.lastname = lastname;
@@ -23,6 +29,7 @@ namespace Entities
             this.url = url;
             this.state = state;
             this.observations = observations;
+            this.rank = rank;
         }
 
         public string getName()
@@ -83,6 +90,16 @@ namespace Entities
         public void setObservations(string observations)
         {
             this.observations = observations;
+        }
+
+        public float getRank()
+        {
+            return this.rank;
+        }
+
+        public void setRank(float rank)
+        {
+            this.rank = rank;
         }
     }
 }
