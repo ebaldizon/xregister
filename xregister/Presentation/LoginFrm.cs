@@ -8,14 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using xregister.Presentation;
+using Entities;
 
 namespace xregister
 {
     public partial class Login : Form
-    {
+    { 
         public Login()
         {
             InitializeComponent();
+            
         }
 
         private void btnLogin_Click(object sender, EventArgs e)

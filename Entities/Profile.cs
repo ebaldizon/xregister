@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Net;
+using System.Drawing;
 
 namespace Entities
 {
@@ -11,25 +13,33 @@ namespace Entities
         private string name;
         private string lastname;
         private DateTime birth;
+        private string city;
+        private string education;
+        private string work;
         private string url;
-        private bool state;
+        private bool active;
         private string observations;
         private float rank;
+        private Image photo;
 
         public Profile()
         {
 
         }
 
-        public Profile(string name, string lastname, DateTime birth, string url, bool state, string observations, float rank)
+        public Profile(string name, string lastname, DateTime birth, string city, string education, string work, string url, bool active, string observations, float rank, Image photo)
         {
             this.name = name;
             this.lastname = lastname;
             this.birth = birth;
+            this.city = city;
+            this.education = education;
+            this.work = work;
             this.url = url;
-            this.state = state;
+            this.active = active;
             this.observations = observations;
             this.rank = rank;
+            this.photo = photo;
         }
 
         public string getName()
@@ -62,6 +72,36 @@ namespace Entities
             this.birth = birth;
         }
 
+        public string getCity()
+        {
+            return this.city;
+        }
+
+        public void setCity(string city)
+        {
+            this.city = city;
+        }
+
+        public string getEducation()
+        {
+            return this.education;
+        }
+
+        public void setEducation(string education)
+        {
+            this.education = education;
+        }
+
+        public string getWork()
+        {
+            return this.work;
+        }
+
+        public void setWork(string work)
+        {
+            this.work = work;
+        }
+
         public string getURL()
         {
             return this.url;
@@ -72,14 +112,14 @@ namespace Entities
             this.url = url;
         }
 
-        public bool getState()
+        public bool getActive()
         {
-            return this.state;
+            return this.active;
         }
 
-        public void setBool(bool state)
+        public void setActive(bool active)
         {
-            this.state = state;
+            this.active = active;
         }
 
         public string getObservations()
@@ -100,6 +140,16 @@ namespace Entities
         public void setRank(float rank)
         {
             this.rank = rank;
+        }
+
+        public Image getPhoto()
+        {
+            return this.photo;
+        }
+
+        public void setPhoto(Image photo)
+        {
+            this.photo = photo;
         }
     }
 }
