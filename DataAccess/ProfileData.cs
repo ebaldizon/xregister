@@ -31,8 +31,9 @@ namespace DataAccess
 
             try
             {
-                cmd.ExecuteNonQuery();
+                int result = cmd.ExecuteNonQuery();
                 this.con.Close();
+                return Convert.ToBoolean(result);
             }
             catch (SqlException e)
             {

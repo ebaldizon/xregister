@@ -21,9 +21,13 @@ namespace Business
             return true;
         }
 
-        public Account readAccount(Account a)
+        public bool loginAccount(Account a)
         {
-            return a;
+            if(a.getUsername() != null && a.getPassword() != null)
+            {
+                return this.accountData.login(a);
+            }
+            return false;
         }
 
         public bool editAccount(Account a)

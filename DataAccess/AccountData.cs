@@ -11,7 +11,7 @@ namespace DataAccess
     public class AccountData
     {
         private SqlConnection con;
-        private string dataSource = "Data Source=localhost;" + "Initial Catalog=facturacion;Integrated Security=true;";
+        private string dataSource = "Data Source=DESKTOP-0J8ESI8\\SQLEXPRESS;Initial Catalog=xregister;Integrated Security=true;";
 
         public AccountData()
         {
@@ -22,13 +22,13 @@ namespace DataAccess
         public bool create(Account a)
         {
             this.con.Open();
-            string query = 
-                "insert into Profiles(name, lastname, birth, url, state, observations, rank) values('Emanuel', 'Baldizon', '01-01-2000', 'asdasd', 1, 'ninguna', 4.5)";
+            string query = "";
             SqlCommand cmd = new SqlCommand(query, this.con);
 
             try
             {
                 cmd.ExecuteNonQuery();
+                this.con.Close();
             }
             catch (SqlException e)
             {
@@ -38,9 +38,24 @@ namespace DataAccess
             return true;
         }
 
-        public Account read(Account a)
+        public bool login(Account a)
         {
-            return a;
+            this.con.Open();
+            string query =
+            "select * from Accounts where username like '"+a.getUsername()+"' and password like '"+a.getPassword()+"' and pin = "+a.getPIN()+";";
+            SqlCommand cmd = new SqlCommand(query, this.con);
+            try
+            {
+                int result = cmd.ExecuteNonQuery();
+                this.con.Close();
+                Console.WriteLine("CONEXION:"+ result);
+                return Convert.ToBoolean(result);
+            }
+            catch (SqlException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            return true;
         }
 
         public bool update(Account a)

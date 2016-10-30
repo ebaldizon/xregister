@@ -33,11 +33,13 @@
             this.lblPassword = new System.Windows.Forms.Label();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
+            this.txtPIN = new System.Windows.Forms.TextBox();
+            this.lblPin = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(162, 145);
+            this.btnLogin.Location = new System.Drawing.Point(162, 186);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(75, 23);
             this.btnLogin.TabIndex = 0;
@@ -77,17 +79,35 @@
             this.txtPassword.Size = new System.Drawing.Size(128, 20);
             this.txtPassword.TabIndex = 4;
             // 
-            // Form1
+            // txtPIN
+            // 
+            this.txtPIN.Location = new System.Drawing.Point(136, 146);
+            this.txtPIN.Name = "txtPIN";
+            this.txtPIN.Size = new System.Drawing.Size(128, 20);
+            this.txtPIN.TabIndex = 5;
+            // 
+            // lblPin
+            // 
+            this.lblPin.AutoSize = true;
+            this.lblPin.Location = new System.Drawing.Point(91, 152);
+            this.lblPin.Name = "lblPin";
+            this.lblPin.Size = new System.Drawing.Size(28, 13);
+            this.lblPin.TabIndex = 6;
+            this.lblPin.Text = "PIN:";
+            // 
+            // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(342, 247);
+            this.Controls.Add(this.lblPin);
+            this.Controls.Add(this.txtPIN);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.lblUsername);
             this.Controls.Add(this.btnLogin);
-            this.Name = "Form1";
+            this.Name = "Login";
             this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -101,6 +121,8 @@
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.TextBox txtPIN;
+        private System.Windows.Forms.Label lblPin;
     }
 }
 

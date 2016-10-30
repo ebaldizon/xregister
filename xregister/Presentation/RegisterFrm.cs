@@ -33,7 +33,14 @@ namespace xregister.Presentation
         {
             Profile p = new Profile(txtName.Text, txtLastName.Text, dtmBirth.Value, txtCity.Text, txtEducation.Text, txtWork.Text ,txtURL.Text, chckbxActive.Checked, rtxtObservations.Text, float.Parse(txtRank.Text), this.picture);
 
-            this.RP.createProfile(p);
+            if(this.RP.createProfile(p))
+            {
+                MessageBox.Show("Registered profile", "xRegister");
+            }
+            else
+            {
+                MessageBox.Show("failure to register", "xRegister");
+            }
 ;       }
 
         private void btnSearch_Click(object sender, EventArgs e)
